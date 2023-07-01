@@ -3,21 +3,19 @@
 const itemList = document.querySelectorAll('.slider-item');
 const itemCount = itemList.length;
 
-
-
-
 const nextItem = document.querySelector('.next');
 const previousItem = document.querySelector('.previous');
+const navItem = document.querySelector('a.toggle-nav');
 let count = 0;
 
 nextItem.addEventListener('click', showNext);
 previousItem.addEventListener('click', showPrevious);
-
+navItem.addEventListener('click', toggleNavigation)
 
 function showNext() {
    itemList[count].classList.remove('active');
    if(count < itemCount - 1) {
-      count++
+      count++;
    } else {
       count = 0;
    }
@@ -32,4 +30,8 @@ function showPrevious() {
       count = itemCount -1;
    } 
    itemList[count].classList.add('active');
+}
+
+function toggleNavigation() {
+   this.nextElementSibling.classList.toggle('active');
 }
