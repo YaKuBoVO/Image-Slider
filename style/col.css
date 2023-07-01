@@ -553,3 +553,10 @@ first {
       grid-column-end: span 12;
     }
   }
+
+.vertical {
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+
